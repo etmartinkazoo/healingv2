@@ -1,10 +1,4 @@
 media:
-  - name: portfolio-images
-    label: Portfolio Images
-    input: src/data/portfolios
-    output: src/data/portfolios
-    categories: [image]
-    extensions: [jpg, jpeg, png, webp, avif]
   - name: testimonial-images
     label: Testimonial Images
     input: src/data/testimonials
@@ -25,155 +19,6 @@ media:
     extensions: [jpg, jpeg, png, webp, avif]
 
 content:
-  - name: portfolios
-    label: Portfolios
-    type: collection
-    path: src/data/portfolios
-    format: yaml-frontmatter
-    subfolders: true
-    filename: index
-    view:
-      fields: [title, location, date, order]
-      primary: title
-      sort: [order, date]
-      search: [title, location, description]
-    fields:
-      - name: title
-        label: Title
-        type: string
-        required: true
-      - name: description
-        label: Description
-        type: text
-        required: true
-      - name: heroImage
-        label: Hero Image
-        type: image
-        media: portfolio-images
-      - name: clients
-        label: Clients
-        type: string
-        list: true
-      - name: location
-        label: Location
-        type: string
-        required: true
-      - name: date
-        label: Date
-        type: date
-        required: true
-      - name: order
-        label: Order
-        type: number
-        required: true
-      - name: draft
-        label: Draft
-        type: boolean
-        default: false
-
-  - name: testimonials
-    label: Testimonials
-    type: collection
-    path: src/data/testimonials
-    format: yaml-frontmatter
-    subfolders: true
-    filename: index
-    view:
-      fields: [title, order]
-      primary: title
-      sort: [order]
-    fields:
-      - name: title
-        label: Title
-        type: string
-        required: true
-      - name: testimonial
-        label: Testimonial
-        type: text
-        required: true
-      - name: image
-        label: Image
-        type: image
-        media: testimonial-images
-      - name: order
-        label: Order
-        type: number
-        required: true
-      - name: draft
-        label: Draft
-        type: boolean
-        default: false
-
-  - name: services
-    label: Services
-    type: collection
-    path: src/data/services
-    format: yaml-frontmatter
-    subfolders: true
-    filename: index
-    view:
-      fields: [name, price, order]
-      primary: name
-      sort: [order]
-    fields:
-      - name: name
-        label: Name
-        type: string
-        required: true
-      - name: icon
-        label: Icon
-        type: select
-        required: true
-        options:
-          values:
-            - { value: "tabler:message", label: "Message" }
-            - { value: "tabler:pencil", label: "Pencil" }
-            - { value: "tabler:notebook", label: "Notebook" }
-            - { value: "tabler:shovel", label: "Shovel" }
-            - { value: "tabler:shopping-cart", label: "Shopping Cart" }
-            - { value: "tabler:plant-2", label: "Plant" }
-            - { value: "tabler:bulb", label: "Bulb" }
-            - { value: "tabler:target", label: "Target" }
-            - { value: "tabler:category", label: "Category" }
-      - name: price
-        label: Price
-        type: string
-        required: true
-      - name: features
-        label: Features
-        type: string
-        list: true
-      - name: order
-        label: Order
-        type: number
-        required: true
-      - name: draft
-        label: Draft
-        type: boolean
-        default: false
-
-  - name: other-pages
-    label: Other Pages
-    type: collection
-    path: src/data/otherPages
-    format: yaml-frontmatter
-    view:
-      fields: [title]
-      primary: title
-    fields:
-      - name: title
-        label: Title
-        type: string
-        required: true
-      - name: description
-        label: Description
-        type: text
-        required: true
-      - name: draft
-        label: Draft
-        type: boolean
-        default: false
-
   - name: home-page
     label: Home Page
     type: file
@@ -321,6 +166,154 @@ content:
         label: Heading
         type: string
         required: true
+  - name: portfolios
+    label: Case Studies
+    type: collection
+    path: src/data/portfolios
+    format: yaml-frontmatter
+    subfolders: true
+    filename: index
+    view:
+      fields: [title, location, date, order]
+      primary: title
+      sort: [order, date]
+      search: [title, location, description]
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: description
+        label: Description
+        type: text
+        required: true
+      - name: heroImage
+        label: Hero Image
+        type: image
+        media: portfolio-images
+      - name: clients
+        label: Clients
+        type: string
+        list: true
+      - name: location
+        label: Location
+        type: string
+        required: true
+      - name: date
+        label: Date
+        type: date
+        required: true
+      - name: order
+        label: Order
+        type: number
+        required: true
+      - name: draft
+        label: Draft
+        type: boolean
+        default: false
+
+  - name: testimonials
+    label: Testimonials
+    type: collection
+    path: src/data/testimonials
+    format: yaml-frontmatter
+    subfolders: true
+    filename: index
+    view:
+      fields: [title, order]
+      primary: title
+      sort: [order]
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: testimonial
+        label: Testimonial
+        type: text
+        required: true
+      - name: image
+        label: Image
+        type: image
+        media: testimonial-images
+      - name: order
+        label: Order
+        type: number
+        required: true
+      - name: draft
+        label: Draft
+        type: boolean
+        default: false
+
+  - name: services
+    label: Services
+    type: collection
+    path: src/data/services
+    format: yaml-frontmatter
+    subfolders: true
+    filename: index
+    view:
+      fields: [name, price, order]
+      primary: name
+      sort: [order]
+    fields:
+      - name: name
+        label: Name
+        type: string
+        required: true
+      - name: icon
+        label: Icon
+        type: select
+        required: true
+        options:
+          values:
+            - { value: "tabler:message", label: "Message" }
+            - { value: "tabler:pencil", label: "Pencil" }
+            - { value: "tabler:notebook", label: "Notebook" }
+            - { value: "tabler:shovel", label: "Shovel" }
+            - { value: "tabler:shopping-cart", label: "Shopping Cart" }
+            - { value: "tabler:plant-2", label: "Plant" }
+            - { value: "tabler:bulb", label: "Bulb" }
+            - { value: "tabler:target", label: "Target" }
+            - { value: "tabler:category", label: "Category" }
+      - name: price
+        label: Price
+        type: string
+        required: true
+      - name: features
+        label: Features
+        type: string
+        list: true
+      - name: order
+        label: Order
+        type: number
+        required: true
+      - name: draft
+        label: Draft
+        type: boolean
+        default: false
+
+  - name: other-pages
+    label: Other Pages
+    type: collection
+    path: src/data/otherPages
+    format: yaml-frontmatter
+    view:
+      fields: [title]
+      primary: title
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: description
+        label: Description
+        type: text
+        required: true
+      - name: draft
+        label: Draft
+        type: boolean
+        default: false
 
   - name: services-page
     label: Services Page
