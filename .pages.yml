@@ -1,0 +1,127 @@
+media:
+  - name: portfolio-images
+    label: Portfolio Images
+    input: src/data/portfolios
+    output: src/data/portfolios
+    categories: [image]
+    extensions: [jpg, jpeg, png, webp, avif]
+  - name: testimonial-images
+    label: Testimonial Images
+    input: src/data/testimonials
+    output: src/data/testimonials
+    categories: [image]
+    extensions: [jpg, jpeg, png, webp, avif]
+  - name: site-images
+    label: Site Images
+    input: src/assets/images
+    output: src/assets/images
+    categories: [image]
+    extensions: [jpg, jpeg, png, webp, avif]
+  - name: public-images
+    label: Public Images
+    input: public/images
+    output: /images
+    categories: [image]
+    extensions: [jpg, jpeg, png, webp, avif]
+
+content:
+  - name: portfolios
+    label: Portfolios
+    type: collection
+    path: src/data/portfolios
+    format: yaml-frontmatter
+    subfolders: true
+    filename: index
+    view:
+      fields: [title, location, date, order]
+      primary: title
+      sort: [order, date]
+      search: [title, location, description]
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: description
+        label: Description
+        type: text
+        required: true
+      - name: heroImage
+        label: Hero Image
+        type: image
+        media: portfolio-images
+      - name: clients
+        label: Clients
+        type: string
+        list: true
+      - name: location
+        label: Location
+        type: string
+        required: true
+      - name: date
+        label: Date
+        type: date
+        required: true
+      - name: order
+        label: Order
+        type: number
+        required: true
+      - name: draft
+        label: Draft
+        type: boolean
+        default: false
+
+  - name: testimonials
+    label: Testimonials
+    type: collection
+    path: src/data/testimonials
+    format: yaml-frontmatter
+    subfolders: true
+    filename: index
+    view:
+      fields: [title, order]
+      primary: title
+      sort: [order]
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: testimonial
+        label: Testimonial
+        type: text
+        required: true
+      - name: image
+        label: Image
+        type: image
+        media: testimonial-images
+      - name: order
+        label: Order
+        type: number
+        required: true
+      - name: draft
+        label: Draft
+        type: boolean
+        default: false
+
+  - name: other-pages
+    label: Other Pages
+    type: collection
+    path: src/data/otherPages
+    format: yaml-frontmatter
+    view:
+      fields: [title]
+      primary: title
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: description
+        label: Description
+        type: text
+        required: true
+      - name: draft
+        label: Draft
+        type: boolean
+        default: false
