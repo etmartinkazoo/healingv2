@@ -5,21 +5,25 @@
  */
 
 import Button from "@components/Button/Button.astro";
-import heroImage from "@assets/images/IMG_7280.webp";
-import heroImageMobile from "@assets/images/IMG_7280.webp";
 import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
 
 interface Props {
 	heading?: string;
 	subtitle?: string;
 	ctaText?: string;
+	image?: ImageMetadata;
 }
 
 const {
 	heading = "Healing Earth Design",
 	subtitle = "Beautiful, functional gardens rooted in ecology, sustainability, and care for the land.",
 	ctaText = "Get in Touch",
+	image,
 } = Astro.props;
+
+// fallback if no image prop provided
+const heroImage = image ?? (await import("@assets/images/IMG_7280.webp")).default;
 ---
 
 <section id="hero" class="relative z-10 flex min-h-[100lvh] w-full">
@@ -36,7 +40,7 @@ const {
 			height={1400}
 		/>
 		<Image
-			src={heroImageMobile}
+			src={heroImage}
 			class="h-auto min-h-full w-full object-cover sm:hidden"
 			alt="garden landscape"
 			aria-hidden="true"

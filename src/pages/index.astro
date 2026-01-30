@@ -14,7 +14,7 @@ import homeData from "@/data/pages/home.json";
 import servicesData from "@/data/pages/services.json";
 // layout
 import BaseLayout from "@layouts/BaseLayout.astro";
-import { Image } from "astro:assets";
+import { resolveImage } from "@js/resolveImage";
 ---
 
 <BaseLayout title={siteData.title} description={siteData.description} navStartStyle="white">
@@ -22,6 +22,7 @@ import { Image } from "astro:assets";
 		heading={homeData.hero.heading}
 		subtitle={homeData.hero.subtitle}
 		ctaText={homeData.hero.ctaText}
+		image={resolveImage(homeData.hero.image)}
 	/>
 	<FeatureNumbers
 		heading={homeData.whatIDo.heading}
@@ -40,9 +41,11 @@ import { Image } from "astro:assets";
 		heading={homeData.about.heading}
 		body={homeData.about.body}
 		signoff={homeData.about.signoff}
+		image={resolveImage(homeData.about.image)}
 	/>
 	<Contact
 		heading={homeData.contact.heading}
 		description={homeData.contact.description}
+		image={resolveImage(homeData.contact.image)}
 	/>
 </BaseLayout>

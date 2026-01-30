@@ -34,6 +34,10 @@ content:
             label: CTA Text
             type: string
             required: true
+          - name: image
+            label: Hero Image
+            type: image
+            media: site-images
       - name: whatIDo
         label: What I Do
         type: object
@@ -83,6 +87,10 @@ content:
             label: Signoff
             type: string
             required: true
+          - name: image
+            label: Profile Image
+            type: image
+            media: site-images
       - name: contact
         label: Contact
         type: object
@@ -95,6 +103,10 @@ content:
             label: Description
             type: text
             required: true
+          - name: image
+            label: Contact Image
+            type: image
+            media: site-images
       - name: testimonialQuote
         label: Testimonial Quote
         type: object
@@ -138,6 +150,10 @@ content:
             label: Paragraph 2
             type: text
             required: true
+          - name: image
+            label: Section Image
+            type: image
+            media: site-images
           - name: imageAlt
             label: Image Alt Text
             type: string
