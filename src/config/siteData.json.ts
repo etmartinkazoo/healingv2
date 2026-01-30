@@ -16,23 +16,23 @@ export interface SiteDataProps {
 
 // Update this file with your site specific information
 const siteData: SiteDataProps = {
-	name: "Horizon Photography",
+	name: "Healing Earth Design",
 	// Your website's title and description (meta fields)
-	title: "Horizon - a beautiful photography website template made with Astro and Tailwind CSS",
+	title: "Healing Earth Design - Sustainable Garden & Landscape Design",
 	description:
-		"Get your next website up and running quickly with our beautiful website theme designed using Astro and Tailwind CSS. Perfect for freelancers, developers, startups, and personal use.",
+		"Healing Earth Design helps homeowners create beautiful, functional gardens rooted in ecology, sustainability, and care for the land.",
 	useViewTransitions: true,
 	// Your information!
 	author: {
-		name: "Cosmic Themes",
+		name: "Sarah Martin",
 		email: "creator@cosmicthemes.com",
-		twitter: "Cosmic_Themes",
+		twitter: "",
 	},
 
 	// default image for meta tags if the page doesn't have an image already
 	defaultImage: {
 		src: "/images/cosmic-themes-logo.jpg",
-		alt: "Cosmic Themes logo",
+		alt: "Healing Earth Design logo",
 	},
 };
 

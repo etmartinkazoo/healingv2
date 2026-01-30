@@ -1,10 +1,10 @@
 ---
-title: A beachside celebration
-description: The sandy shores, kissed by gentle waves, provided a serene backdrop for your beach wedding.
+title: Medicinal Herb Spiral Garden
+description: A compact, functional herb garden supporting medicinal and culinary use while showcasing varied growing conditions in a small space.
 heroImage: ../../../assets/images/IMG_8319.webp
 date: "Jun 12 2024"
-location: Miami, Florida
-clients: [Alex, Jeff]
+location: Local Residence
+clients: [Client, Garden]
 images:
   [
     [../../../assets/images/IMG_2194.webp, ../../../assets/images/IMG_2516.webp],
@@ -15,4 +15,10 @@ images:
 order: 2
 ---
 
-This Malibu wedding was a breathtaking affair. The stunning mountain views provided a picturesque backdrop. The photographs beautifully captured the intimate moments, the vibrant energy, and the overall romantic ambiance of the day.
+**Client Goal:** To create a compact, functional herb garden that supports medicinal and culinary use while showcasing a variety of growing conditions in a small space.
+
+**Challenges:** Limited footprint. Need for varied moisture and sun conditions. Desire for both beauty and practicality.
+
+**Solution:** I designed and installed a traditional herb spiral, creating multiple microclimates within a single structure. Drought-tolerant herbs were placed higher on the spiral, while moisture-loving plants were positioned toward the base. Plant choices were guided by medicinal use, growth habits, and site conditions.
+
+**Outcome:** The herb spiral became a highly productive and visually engaging garden feature, providing fresh medicinal and culinary herbs throughout the growing season while serving as an educational example of ecological garden design.

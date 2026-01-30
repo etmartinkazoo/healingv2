@@ -1,10 +1,10 @@
 ---
-title: A mountain escape
-description: Transform your wedding moments into lasting memories amidst California's majestic mountains.
+title: Pollinator-Friendly Front Yard Transformation
+description: Replacing a traditional, lawn-heavy front yard with a pollinator-friendly garden that feels welcoming, intentional, and manageable.
 heroImage: ../../../assets/images/IMG_6689.webp
 date: "Aug 5 2024"
-location: Malibu, California
-clients: [Hannah, Marco]
+location: Local Residence
+clients: [Client, Garden]
 images:
   [
     [../../../assets/images/IMG_6674.webp, ../../../assets/images/IMG_6671.webp],
@@ -15,4 +15,10 @@ images:
 order: 1
 ---
 
-This Malibu wedding was a breathtaking affair. The stunning mountain views provided a picturesque backdrop. The photographs beautifully captured the intimate moments, the vibrant energy, and the overall romantic ambiance of the day.
+**Client Goal:** The homeowner wanted to replace a traditional, lawn-heavy front yard with a pollinator-friendly garden that still felt welcoming, intentional, and manageable.
+
+**Challenges:** Full sun exposure and compacted soil. Desire for native plants without an overgrown look. Low-maintenance expectations.
+
+**Solution:** I designed a layered planting plan using native perennials, ornamental grasses, and flowering plants chosen for long bloom periods and habitat value. The design followed a "right plant, right place" approach to ensure long-term success and seasonal interest.
+
+**Outcome:** The garden now supports bees, butterflies, and birds throughout the growing season while remaining visually cohesive and approachable. The client gained confidence maintaining the space and plans to expand the garden over time.
