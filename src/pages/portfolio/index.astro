@@ -6,6 +6,9 @@ import TestimonialQuote from "@components/Testimonials/TestimonialQuote.astro";
 // layout
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { getCollection, render } from "astro:content";
+// data
+import caseStudiesData from "@/data/pages/case-studies.json";
+import homeData from "@/data/pages/home.json";
 
 const portfolios = await getCollection("portfolios", ({ data }) => {
 	// filter out draft pages
@@ -13,17 +16,20 @@ const portfolios = await getCollection("portfolios", ({ data }) => {
 });
 ---
 
-<BaseLayout title="Case Studies" description="Case studies showcasing garden and landscape design projects.">
+<BaseLayout title={caseStudiesData.pageTitle} description={caseStudiesData.pageDescription}>
 	<div class="site-container pt-24 md:pt-36">
 		<div class="mx-auto max-w-6xl text-center">
 			<h1 class="h2 text-pretty uppercase">
-				Gardens designed with intention, rooted in ecology.
+				{caseStudiesData.heading}
 			</h1>
 		</div>
 		<PortfolioGrid portfolios={portfolios} />
 	</div>
 
-	<TestimonialQuote />
+	<TestimonialQuote
+		quoteText={homeData.testimonialQuote.quoteText}
+		attribution={homeData.testimonialQuote.attribution}
+	/>
 
 	<Contact class="mt-12" />
 </BaseLayout>

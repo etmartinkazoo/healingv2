@@ -21,6 +21,10 @@ const portfolios = defineCollection({
 					message: "Each sub-array must contain 1, 2, or 3 items",
 				}),
 			),
+			goal: z.string().optional(),
+			challenges: z.string().optional(),
+			solution: z.string().optional(),
+			outcome: z.string().optional(),
 			// Transform string to Date object
 			date: z.coerce.date(),
 			order: z.number(),
@@ -47,6 +51,23 @@ const testimonials = defineCollection({
 		}),
 });
 
+// services
+const services = defineCollection({
+	loader: glob({
+		pattern: "**/[^_]*.{md,mdx}",
+		base: "./src/data/services",
+	}),
+	schema: () =>
+		z.object({
+			name: z.string(),
+			icon: z.string(),
+			price: z.string(),
+			features: z.array(z.string()),
+			order: z.number(),
+			draft: z.boolean().optional(),
+		}),
+});
+
 // other pages
 const otherPages = defineCollection({
 	// type: "content",
@@ -66,4 +87,5 @@ export const collections = {
 	portfolios,
 	testimonials,
 	otherPages,
+	services,
 };

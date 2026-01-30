@@ -10,17 +10,39 @@ import PricingThreeCards from "@components/Pricing/PricingThreeCards.astro";
 import Testimonials from "@components/Testimonials/Testimonials.astro";
 // data
 import siteData from "@config/siteData.json";
+import homeData from "@/data/pages/home.json";
+import servicesData from "@/data/pages/services.json";
 // layout
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
 ---
 
 <BaseLayout title={siteData.title} description={siteData.description} navStartStyle="white">
-	<Hero />
-	<FeatureNumbers />
+	<Hero
+		heading={homeData.hero.heading}
+		subtitle={homeData.hero.subtitle}
+		ctaText={homeData.hero.ctaText}
+	/>
+	<FeatureNumbers
+		heading={homeData.whatIDo.heading}
+		tagline={homeData.whatIDo.tagline}
+		missionStatement={homeData.whatIDo.missionStatement}
+		items={homeData.whatIDo.items}
+	/>
 	<PortfolioThreeCards />
 	<Testimonials />
-	<PricingThreeCards />
-	<About />
-	<Contact />
+	<PricingThreeCards
+		heading={servicesData.heading}
+		ctaText={servicesData.ctaText}
+	/>
+	<About
+		subheading={homeData.about.subheading}
+		heading={homeData.about.heading}
+		body={homeData.about.body}
+		signoff={homeData.about.signoff}
+	/>
+	<Contact
+		heading={homeData.contact.heading}
+		description={homeData.contact.description}
+	/>
 </BaseLayout>

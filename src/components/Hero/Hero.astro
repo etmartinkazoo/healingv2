@@ -8,6 +8,18 @@ import Button from "@components/Button/Button.astro";
 import heroImage from "@assets/images/IMG_7280.webp";
 import heroImageMobile from "@assets/images/IMG_7280.webp";
 import { Image } from "astro:assets";
+
+interface Props {
+	heading?: string;
+	subtitle?: string;
+	ctaText?: string;
+}
+
+const {
+	heading = "Healing Earth Design",
+	subtitle = "Beautiful, functional gardens rooted in ecology, sustainability, and care for the land.",
+	ctaText = "Get in Touch",
+} = Astro.props;
 ---
 
 <section id="hero" class="relative z-10 flex min-h-[100lvh] w-full">
@@ -40,12 +52,12 @@ import { Image } from "astro:assets";
 			<h1
 				class="font-heading-1 text-4xl font-semibold text-pretty drop-shadow-[0_2px_2px_rgba(0,0,0,0.4)] md:text-7xl md:leading-tight"
 			>
-				Healing Earth Design
+				{heading}
 			</h1>
 			<p
 				class="mt-8 text-lg tracking-widest text-pretty drop-shadow-[0_1px_1px_rgba(0,0,0,0.2)] md:max-w-[550px] md:text-2xl"
 			>
-				Beautiful, functional gardens rooted in ecology, sustainability, and care for the land.
+				{subtitle}
 			</p>
 			<div class="mt-10 flex flex-wrap justify-center gap-4 md:justify-start">
 				<Button
@@ -54,7 +66,7 @@ import { Image } from "astro:assets";
 					href="/#contact"
 					class="pl-0 text-xl text-white drop-shadow-[0_1px_1px_rgba(0,0,0,0.2)] md:text-3xl"
 				>
-					Get in Touch
+					{ctaText}
 				</Button>
 			</div>
 		</div>

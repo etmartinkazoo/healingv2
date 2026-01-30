@@ -3,6 +3,7 @@ import Contact from "@components/Contact/Contact.astro";
 import PortfolioImage from "@components/PorfolioImage/PortfolioImage.astro";
 import PortfolioGrid from "@components/Portfolio/PortfolioGrid.astro";
 import TestimonialQuote from "@components/Testimonials/TestimonialQuote.astro";
+import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 import { type CollectionEntry, getCollection } from "astro:content";
 
@@ -12,10 +13,15 @@ interface Props {
 	portfolio: CollectionEntry<"portfolios">;
 }
 
-import headerImage from "@assets/images/IMG_0021.webp";
-
 const { portfolio } = Astro.props as Props;
-const { title, description, date, images, clients, location, heroImage } = portfolio.data;
+const { title, description, date, images, clients, location, heroImage, goal, challenges, solution, outcome } = portfolio.data;
+
+const cards = [
+	{ icon: "tabler:target", title: "Goal", text: goal },
+	{ icon: "tabler:alert-triangle", title: "Challenges", text: challenges },
+	{ icon: "tabler:bulb", title: "Solution", text: solution },
+	{ icon: "tabler:plant-2", title: "Outcome", text: outcome },
+];
 
 // find other portfolios to show later down the page
 const otherPortfolios = await getCollection("portfolios", (otherPortfolio) => {
@@ -31,20 +37,21 @@ const otherPortfolios = await getCollection("portfolios", (otherPortfolio) => {
 	heroImage={heroImage}
 	navStartStyle="white"
 >
-	<div class="relative h-[40svh] w-full overflow-hidden md:h-[60svh]">
+	<div class="relative h-[50svh] w-full overflow-hidden md:h-[70svh]">
 		<div class="absolute inset-0 z-10 bg-black/30"></div>
 		<Image
-			src={headerImage}
-			alt="Portfolio header"
-			class="absolute inset-0 h-auto min-h-full w-full min-w-full object-cover md:hidden"
-			width={600}
+			src={heroImage}
+			alt={`cover for ${title}`}
+			class="absolute inset-0 h-full w-full object-cover object-center md:hidden"
+			width={800}
 			densities={[1.5, 2]}
 			loading="eager"
+			transition:name={`portfolio-image-${portfolio.id}`}
 		/>
 		<Image
-			src={headerImage}
-			alt="Portfolio header"
-			class="absolute inset-0 hidden h-auto min-h-full w-full min-w-full object-cover md:block"
+			src={heroImage}
+			alt={`cover for ${title}`}
+			class="absolute inset-0 hidden h-full w-full object-cover object-center md:block"
 			width={1920}
 			densities={[1.5, 2]}
 			loading="eager"
@@ -56,19 +63,6 @@ const otherPortfolios = await getCollection("portfolios", (otherPortfolio) => {
 			{title}
 		</h1>
 
-		<!-- hero image -->
-		<div class="mt-6 h-auto max-h-[50vh] w-full overflow-hidden md:max-h-[80vh]">
-			<Image
-				src={heroImage}
-				alt={`cover for ${title}`}
-				width={1120}
-				quality="high"
-				densities={[1.5, 2]}
-				class="h-auto min-h-full w-full min-w-full object-cover"
-				transition:name={`portfolio-image-${portfolio.id}`}
-			/>
-		</div>
-
 		<!-- location -->
 		<h2
 			class="h3 text-primary-500 mt-10 flex flex-col items-center justify-center gap-x-3 gap-y-1 tracking-widest md:flex-row"
@@ -76,9 +70,21 @@ const otherPortfolios = await getCollection("portfolios", (otherPortfolio) => {
 			<span>{location}</span>
 		</h2>
 
-		<!-- slot really only fuctions as a longer description -->
-		<div class="description mt-6 text-center text-pretty md:text-lg">
-			<slot />
+		<!-- goal / challenges / solution / outcome cards -->
+		<div class="mt-10 grid gap-6 sm:grid-cols-2 md:mt-16 md:gap-8">
+			{
+				cards.map((card) =>
+					card.text ? (
+						<div class="bg-base-100 rounded-md p-6 md:p-8">
+							<div class="flex items-center gap-3">
+								<Icon name={card.icon} class="text-primary-500 size-7 shrink-0" />
+								<h3 class="h3 uppercase">{card.title}</h3>
+							</div>
+							<p class="description mt-4 text-pretty md:text-lg">{card.text}</p>
+						</div>
+					) : null
+				)
+			}
 		</div>
 
 		<!-- portfolio images -->

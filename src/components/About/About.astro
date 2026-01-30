@@ -5,23 +5,33 @@
 
 import profileImage from "@assets/images/93E74CCA-7963-44C9-9EAE-63A2A275CD89.webp";
 import { Image } from "astro:assets";
+
+interface Props {
+	subheading?: string;
+	heading?: string;
+	body?: string;
+	signoff?: string;
+}
+
+const {
+	subheading = "About",
+	heading = "Healing Earth Design",
+	body = "Healing Earth Design was founded on the belief that caring for the land can be a powerful form of healing. After experiencing personal loss, I returned to school for sustainable horticulture and landscape design, finding peace and purpose through working with plants, soil, and seasonal rhythms. What began as a way to heal grew into a calling to help others reconnect with the earth in meaningful, practical ways.",
+	signoff = "- Sarah",
+} = Astro.props;
 ---
 
 <section id="about" class="site-container scroll-mt-10 py-8 md:py-12">
 	<div class="flex flex-col md:flex-row">
 		<div class="md:w-2/3">
-			<h2 class="h3 text-primary-500 text-pretty uppercase">About</h2>
-			<h3 class="h2 mt-4">Healing Earth Design</h3>
+			<h2 class="h3 text-primary-500 text-pretty uppercase">{subheading}</h2>
+			<h3 class="h2 mt-4">{heading}</h3>
 			<div class="bg-base-100 mt-8 p-8 md:mb-20 lg:text-lg">
 				<p>
-					Healing Earth Design was founded on the belief that caring for the land can be a
-					powerful form of healing. After experiencing personal loss, I returned to school for
-					sustainable horticulture and landscape design, finding peace and purpose through
-					working with plants, soil, and seasonal rhythms. What began as a way to heal grew
-					into a calling to help others reconnect with the earth in meaningful, practical ways.
+					{body}
 				</p>
 				<div class="flex w-3/4 justify-end">
-					<p class="font-heading-1 text-3xl italic">- Sarah</p>
+					<p class="font-heading-1 text-3xl italic">{signoff}</p>
 				</div>
 			</div>
 		</div>
