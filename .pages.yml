@@ -1,10 +1,4 @@
 media:
-  - name: testimonial-images
-    label: Testimonial Images
-    input: src/data/testimonials
-    output: src/data/testimonials
-    categories: [image]
-    extensions: [jpg, jpeg, png, webp, avif]
   - name: site-images
     label: Site Images
     input: src/assets/images
