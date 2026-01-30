@@ -166,6 +166,19 @@ content:
         label: Heading
         type: string
         required: true
+  - name: services-page
+    label: Services Page
+    type: file
+    path: src/data/pages/services.json
+    fields:
+      - name: heading
+        label: Heading
+        type: string
+        required: true
+      - name: ctaText
+        label: CTA Text
+        type: string
+        required: true
   - name: portfolios
     label: Case Studies
     type: collection
@@ -314,17 +327,3 @@ content:
         label: Draft
         type: boolean
         default: false
-
-  - name: services-page
-    label: Services Page
-    type: file
-    path: src/data/pages/services.json
-    fields:
-      - name: heading
-        label: Heading
-        type: string
-        required: true
-      - name: ctaText
-        label: CTA Text
-        type: string
-        required: true
