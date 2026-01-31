@@ -1,6 +1,6 @@
 {
   "hero": {
-    "heading": "Healing Earth Design",
+    "heading": "Healing Earth Design by Sarah",
     "subtitle": "Beautiful, functional gardens rooted in ecology, sustainability, and care for the land.",
     "ctaText": "Get in Touch",
     "image": "src/assets/images/IMG_7280.webp"
@@ -10,10 +10,22 @@
     "tagline": "All services are plant-forward and tailored to your space, lifestyle, and experience level.",
     "missionStatement": "My mission is to help bridge the gap between wild spaces and our cities by transforming everyday yards into living ecosystems—places that nurture plants, people, and wildlife alike.",
     "items": [
-      { "largeText": "Consult", "description": "Garden consultations and seasonal guidance" },
-      { "largeText": "Design", "description": "Custom planting plans and landscape design drawings" },
-      { "largeText": "Grow", "description": "Native, pollinator, vegetable, cut flower, and medicinal herb gardens" },
-      { "largeText": "Support", "description": "Plant shopping and installation support" }
+      {
+        "largeText": "Consult",
+        "description": "Garden consultations and seasonal guidance"
+      },
+      {
+        "largeText": "Design",
+        "description": "Custom planting plans and landscape design drawings"
+      },
+      {
+        "largeText": "Grow",
+        "description": "Native, pollinator, vegetable, cut flower, and medicinal herb gardens"
+      },
+      {
+        "largeText": "Support",
+        "description": "Plant shopping and installation support"
+      }
     ]
   },
   "about": {
