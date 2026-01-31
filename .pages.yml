@@ -209,10 +209,10 @@ content:
     subfolders: true
     filename: index
     view:
-      fields: [title, location, date, order]
+      fields: [title, location, date, order, draft]
       primary: title
       sort: [order, date]
-      search: [title, location, description]
+      search: [title, location, description, goal, solution, outcome]
     fields:
       - name: title
         label: Title
@@ -234,6 +234,33 @@ content:
         label: Location
         type: string
         required: true
+      - name: goal
+        label: Goal
+        type: text
+        required: false
+      - name: challenges
+        label: Challenges
+        type: text
+        required: false
+      - name: solution
+        label: Solution
+        type: text
+        required: false
+      - name: outcome
+        label: Outcome
+        type: text
+        required: false
+      - name: images
+        label: Images
+        type: object
+        list: true
+        required: false
+        fields:
+          - name: image_group
+            label: Image Group
+            type: image
+            media: portfolio-images
+            list: true
       - name: date
         label: Date
         type: date
