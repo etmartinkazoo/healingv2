@@ -11,6 +11,18 @@ media:
     output: /images
     categories: [image]
     extensions: [jpg, jpeg, png, webp, avif]
+  - name: portfolio-images
+    label: Portfolio Images
+    input: src/assets/images
+    output: src/assets/images
+    categories: [image]
+    extensions: [jpg, jpeg, png, webp, avif]
+  - name: testimonial-images
+    label: Testimonial Images
+    input: src/assets/images
+    output: src/assets/images
+    categories: [image]
+    extensions: [jpg, jpeg, png, webp, avif]
 
 content:
   - name: home-page
